@@ -140,6 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="3.PD_Builder.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="PersonBuilder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Person.hpp" />
+    <ClInclude Include="PersonBuilder.hpp" />
+    <ClInclude Include="PersonBuilderBase.hpp" />
+    <ClInclude Include="PersonBuilderName.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
