@@ -1,62 +1,96 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 
-/* Car parts */
-class Wheel
+class Product
 {
 public:
-    int size;
+	std::vector<std::string> elements_;
+	void display_product_specification()
+	{
+		for (const auto& el : elements_)
+		{
+			std::cout << el << ", ";
+		}
+	}
 };
 
-class Engine
+class Builder
 {
 public:
-    int horsepower;
+	virtual void buildElement1() = 0;
+	virtual void buildElement2() = 0;
+	virtual void buildElement3() = 0;
+
+	virtual const Product& getProduct() = 0;
+	
+	virtual ~Builder() {}
 };
 
-class Body
+class ConcreteBuilder1 : public Builder
 {
 public:
-    std::string shape;
+	ConcreteBuilder1()
+	{
+		product1_ = std::make_unique<Product>();
+	}
+
+	void buildElement1()
+	{
+		product1_->elements_.push_back("Element1Builder1");
+	}
+
+	void buildElement2()
+	{
+		product1_->elements_.push_back("Element2Builder1");
+	}
+
+	void buildElement3()
+	{
+		product1_->elements_.push_back("Element3Builder1");
+	}
+
+	const Product& getProduct()
+	{
+		return *product1_;
+	}
+
+private:
+	std::unique_ptr<Product> product1_;
 };
 
-/* Final product -- a car */
-class Car
+class BuilderDirector
 {
 public:
-    Wheel wheels[4];
-    Engine engine;
-    Body body;
+	BuilderDirector(std::shared_ptr<Builder> builder)
+	{
+		builder_ = builder;
+	}
 
-    void specifications()
-    {
-        std::cout << "body:" << body.shape << std::endl;
-        std::cout << "engine horsepower:" << engine.horsepower << std::endl;
-        std::cout << "tire size:" << wheels[0].size << "'" << std::endl;
-    }
+	void buildMinimalFeaturedProduct()
+	{
+		builder_->buildElement1();
+	}
+
+	void buildFullFeaturedProduct()
+	{
+		builder_->buildElement1();
+		builder_->buildElement2();
+		builder_->buildElement3();
+	}
+
+private:
+	std::shared_ptr<Builder> builder_;
 };
-
-class CarBuilderInterface
-{
-public:
-    virtual std::unique_ptr<Car> createCar() = 0;
-};
-
-class JeepBuilder : public CarBuilderInterface
-{
-public:
-    std::unique_ptr<Car> createCar()
-    {
-        std::unique_ptr<Car> car = std::make_unique<Car>();
-        car->body
-    }
-    
-};
-
 
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::shared_ptr<Builder> builder = std::make_shared<ConcreteBuilder1>();
+	BuilderDirector director(builder);
+	director.buildMinimalFeaturedProduct();
+
+	Product my_product = builder->getProduct();
+	my_product.display_product_specification();
 }
 
