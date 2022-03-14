@@ -21,7 +21,7 @@ class SquarePeg
 public:
 	SquarePeg(float width) : width_(width) {}
 
-	float getWidth()
+	double getWidth()
 	{
 		return width_;
 	}
@@ -62,10 +62,10 @@ private:
 
 int main()
 {
-	RoundHole(10);
-	SquarePeg(5);
-	SquarePegAdapter(SquarePeg);
+	RoundHole hole(10);
+	SquarePeg square_peg(5);
+	SquarePegAdapter square_peg_adapter(square_peg);
 
-    std::cout << "Hello World!\n";
+	std::cout << hole.if_fits(square_peg_adapter);
 }
 
