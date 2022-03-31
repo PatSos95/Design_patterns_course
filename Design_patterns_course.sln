@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuilderExample", "BuilderEx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdapterExample", "AdapterExample\AdapterExample.vcxproj", "{7CEE3871-A031-4DAE-8525-266C57842CEA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompositeExample", "CompositeExample\CompositeExample.vcxproj", "{740E7400-45A8-42BD-8AFB-F13A189F9AAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{7CEE3871-A031-4DAE-8525-266C57842CEA}.Release|x64.Build.0 = Release|x64
 		{7CEE3871-A031-4DAE-8525-266C57842CEA}.Release|x86.ActiveCfg = Release|Win32
 		{7CEE3871-A031-4DAE-8525-266C57842CEA}.Release|x86.Build.0 = Release|Win32
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Debug|x64.ActiveCfg = Debug|x64
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Debug|x64.Build.0 = Debug|x64
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Debug|x86.ActiveCfg = Debug|Win32
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Debug|x86.Build.0 = Debug|Win32
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Release|x64.ActiveCfg = Release|x64
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Release|x64.Build.0 = Release|x64
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Release|x86.ActiveCfg = Release|Win32
+		{740E7400-45A8-42BD-8AFB-F13A189F9AAC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
